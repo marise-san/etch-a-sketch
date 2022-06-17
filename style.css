@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -5,24 +7,110 @@
 }
 
 body {
+    font-family: 'Audiowide', cursive;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #FFFAC8;
+    background: rgb(238, 174, 202);
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
 }
 
-.size-reset {
+.outer-border {
     display: flex;
-    gap: 4px;
+    justify-content: center;
+    align-items: center;
 }
+
+.outer-border,
+.inner-border {
+    background-color: #660BA3;
+    padding: 8px;
+}
+
+.inside-border {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #580094;
+    padding: 8px 36px;
+
+}
+
+.inside-border>h1 {
+    font-size: 42px;
+    color: #FFF600;
+    text-shadow: 4px 4px #00F2F2;
+}
+
+.deco-square {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+
+#sqr-one,
+#sqr-two,
+#sqr-three {
+    border: 2px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#sqr-one {
+    background-color: #00F2F2;
+}
+
+#sqr-two {
+    background-color: #FF007D;
+}
+
+#sqr-three {
+    background-color: #FFF600;
+}
+
 
 .container {
     display: grid;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
-    height: 480px;
-    width: 480px;
+    height: 620px;
+    width: 620px;
     background-color: #FFFFFF;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+input {
+    width: 40px;
+    height: 27px;
+    background-color: #FFF600;
+}
+
+.buttons>.colors {
+    display: flex;
+    gap: 36px;
+}
+
+button {
+    border: 3px outset #FFF600;
+    color: #FFF600;
+    font-weight: 700;
+    background-color: #FF007D;
+    padding: 4px 6px;
+}
+
+button:hover {
+    border: 3px outset #00F2F2;
+    cursor: pointer;
+    color: #00F2F2;
+    font-weight: 700;
+    background-color: #660BA3;
+    padding: 4px 6px;
+    transition: all 0.5s;
 }

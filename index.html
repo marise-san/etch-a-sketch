@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,23 +10,33 @@
 </head>
 
 <body>
-    <header>
-        <h1>Etch a Sketch</h1>
-    </header>
-
     <main>
-        <div class="size-reset">
-            <div class="size">
-            <input type="text" placeholder="2-100" onchange="changeSize(this.value)" />
-            <button>Change Size</button>
+        <div class="outer-border">
+            <div class="inside-border">
+                <h1>Etch a Sketch</h1>
+                <div class="deco-square">
+                    <div id="sqr-one"></div>
+                    <div id="sqr-two"></div>
+                    <div id="sqr-three"></div>
+                </div>
+                <div class="inner-border">
+                    <div class="container"></div>
+                </div>
+                <div class="buttons">
+                    <div class="size">
+                        <input type="text" placeholder="2-100" onchange="changeSize(this.value)" />
+                        <button>Size</button>
+                    </div>
+                    <div class="colors">
+                        <button onclick="pickColor('black')">Pen</button>
+                        <button onclick="pickColor('rgb')">RGB</button>
+                        <button onclick="pickColor('white')">Erase</button>
+                    </div>
+                    <div class="reset">
+                        <button onclick="resetGrid()">Reset</button>
+                    </div>
+                </div>
             </div>
-            <button onclick="resetGrid()">Reset</button>
-        </div>
-        <div class="container"></div>
-        <div class="colors">
-            <button onclick="pickColor('black')">Pen</button>
-            <button onclick="pickColor('rgb')">RGB</button>
-            <button onclick="pickColor('white')">Erase</button>
         </div>
     </main>
     <script src="script.js"></script>
