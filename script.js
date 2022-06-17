@@ -14,4 +14,10 @@ function createGrid(size) {
 
 createGrid(16); // default grid size
 
-const changeSize = (inputSize) => createGrid(inputSize);
+function changeSize(inputSize){
+    if(inputSize >= 2 && inputSize <= 100){
+        createGrid(inputSize)
+    } else {
+        alert('Size must be between 2 and 100');
+    }
+}
