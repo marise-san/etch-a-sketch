@@ -14,11 +14,19 @@
     </header>
 
     <main>
-        <div class="change-size">
+        <div class="size-reset">
+            <div class="size">
             <input type="text" placeholder="2-100" onchange="changeSize(this.value)" />
             <button>Change Size</button>
+            </div>
+            <button onclick="resetGrid()">Reset</button>
         </div>
         <div class="container"></div>
+        <div class="colors">
+            <button onclick="pickColor('black')">Pen</button>
+            <button onclick="pickColor('rgb')">RGB</button>
+            <button onclick="pickColor('white')">Erase</button>
+        </div>
     </main>
     <script src="script.js"></script>
 </body>
