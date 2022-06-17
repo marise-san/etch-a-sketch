@@ -9,3 +9,7 @@ function createGrid(size) {
 }
 
 createGrid(16);
+
+const changeColor = (e) => e.target.classList.add('color');
+const items = document.querySelectorAll('.grid-item');
+items.forEach(item => item.addEventListener('mouseover', changeColor));
