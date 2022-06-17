@@ -1,5 +1,7 @@
 function createGrid(size) {
     const container = document.querySelector('.container');
+    const items = container.querySelectorAll('div');
+    items.forEach((div) => div.remove());
 
     container.style.setProperty('--grid-rows', size);
     container.style.setProperty('--grid-cols', size);
