@@ -13,11 +13,11 @@
     <main>
         <div class="outer-border">
             <div class="inside-border">
-                <h1>Etch a Sketch</h1>
-                <div class="deco-square">
-                    <div id="sqr-one"></div>
-                    <div id="sqr-two"></div>
-                    <div id="sqr-three"></div>
+                <div class="header">
+                    <h1>Etch A Sketch</h1>
+                    <div class="pen">
+                        <div class="pen-off" id="mode"></div>
+                    </div>
                 </div>
                 <div class="inner-border">
                     <div class="container"></div>
@@ -31,8 +31,6 @@
                         <button onclick="pickColor('black')">Pen</button>
                         <button onclick="pickColor('rgb')">RGB</button>
                         <button onclick="pickColor('white')">Erase</button>
-                    </div>
-                    <div class="reset">
                         <button onclick="resetGrid()">Reset</button>
                     </div>
                 </div>
