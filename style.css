@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 * {
     box-sizing: border-box;
@@ -6,111 +6,123 @@
     margin: 0;
 }
 
+/* #################### BACKGROUND #################### */
 body {
-    font-family: 'Audiowide', cursive;
+    font-family: 'Press Start 2P', sans;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: rgb(238, 174, 202);
-    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    background: linear-gradient(90deg, #000, #8229C9, #000, #8229C9, #000);
+    background-size: 200% 200%;
+    animation: backgroundGradient 8s linear infinite;
 }
 
+@keyframes backgroundGradient {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 200% 200%;
+    }
+}
+
+/* ################## FRAMES AND H1 ################## */
 .outer-border {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-shadow: 0 0 24px #FFFFFF, 0 0 10px #FFFFFF inset;
+}
+
+.outer-border,
+.inside-border {
+    border-radius: 24px;
 }
 
 .outer-border,
 .inner-border {
     background-color: #660BA3;
-    padding: 8px;
+    padding: 6px;
 }
 
 .inside-border {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     background-color: #580094;
-    padding: 8px 36px;
-
-}
-
-.inside-border>h1 {
-    font-size: 42px;
-    color: #FFF600;
-    text-shadow: 4px 4px #00F2F2;
-}
-
-.deco-square {
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 10px;
-}
-
-#sqr-one,
-#sqr-two,
-#sqr-three {
-    border: 2px solid black;
     padding: 10px;
-    margin-bottom: 10px;
 }
 
-#sqr-one {
-    background-color: #00F2F2;
+.header {
+    display: flex;
+    padding: 16px;
 }
 
-#sqr-two {
-    background-color: #FF007D;
+.header>h1 {
+    flex: 1;
+    font-size: 26px;
+    color: #FFF600;
+    text-shadow: 2px 4px #00F2F2;
 }
 
-#sqr-three {
+.header>h1:hover {
+    color: #00F2F2;
+    text-shadow: 2px 4px #FFF600;
+}
+
+/* #################### BUTTONS #################### */
+/* ############## PEN MODE INDICATOR ############## */
+#mode {
+    border: 3px solid black;
+    padding: 10px;
+}
+
+.pen-off {
     background-color: #FFF600;
 }
 
-
-.container {
-    display: grid;
-    grid-template-rows: repeat(var(--grid-rows), 1fr);
-    grid-template-columns: repeat(var(--grid-cols), 1fr);
-    height: 620px;
-    width: 620px;
-    background-color: #FFFFFF;
+.pen-on {
+    background-color: #FF007D;
+    box-shadow: 0 0 24px #FFFFFF, 0 0 40px #FFFFFF inset;
 }
 
+/* ############### BOTTOM BUTTONS ############### */
 .buttons {
     display: flex;
     justify-content: space-between;
     margin: 10px;
 }
 
+button,
 input {
-    width: 40px;
-    height: 27px;
-    background-color: #FFF600;
-}
-
-.buttons>.colors {
-    display: flex;
-    gap: 36px;
+    height: 30px;
+    width: 60px;
 }
 
 button {
     border: 3px outset #FFF600;
+    background-color: #FF007D;
     color: #FFF600;
     font-weight: 700;
-    background-color: #FF007D;
-    padding: 4px 6px;
 }
 
 button:hover {
     border: 3px outset #00F2F2;
-    cursor: pointer;
-    color: #00F2F2;
-    font-weight: 700;
     background-color: #660BA3;
-    padding: 4px 6px;
+    color: #00F2F2;
+    cursor: pointer;
     transition: all 0.5s;
+}
+
+input {
+    background-color: #FFF600;
+}
+
+/* #################### CANVAS #################### */
+.container {
+    display: grid;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    height: 600px;
+    width: 600px;
+    background-color: #FFFFFF;
 }
