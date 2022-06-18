@@ -1,3 +1,5 @@
+let click = true;
+
 function createGrid(size) {
     const container = document.querySelector('.container');
     const items = container.querySelectorAll('div');
@@ -11,7 +13,6 @@ function createGrid(size) {
         container.appendChild(grid).className = 'grid-item';
     }
 }
-
 createGrid(16); // default grid size
 
 function changeSize(inputSize) {
@@ -21,23 +22,33 @@ function changeSize(inputSize) {
         alert('Size must be between 2 and 100');
     }
 }
-
-// ################ COLORS ####################
+// ################################ COLORS ################################
 let color = '';
-
 function defColor() {
-    if (color === 'rgb') {
-        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-    } else {
-        this.style.backgroundColor = color;
+    if (click) {
+        if (color === 'rgb') {
+            this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        } else {
+            this.style.backgroundColor = color;
+        }
     }
 }
 
 function pickColor(newColor) {
     color = newColor;
 }
-// ################################################
-
+// ### toggles pen mode if get a click anywhere with exception of buttons ###
+document.querySelector('body').addEventListener('click', function (e) {
+    if (e.target.tagName != 'BUTTON' && e.target.tagName != "INPUT") {
+        click = !click;
+        if (click) {
+            document.getElementById('mode').className = "pen-on";
+        } else {
+            document.getElementById('mode').className = "pen-off";
+        }
+    }
+});
+// #########################################################################
 function resetGrid() {
     const container = document.querySelector('.container');
     const items = container.querySelectorAll('div');
