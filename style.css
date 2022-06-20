@@ -5,20 +5,18 @@
     padding: 0;
     margin: 0;
 }
-
 /* #################### BACKGROUND #################### */
 body {
     font-family: 'Press Start 2P', sans;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 100vh;
     background: linear-gradient(90deg, #000, #8229C9, #000, #8229C9, #000);
     background-size: 200% 200%;
     animation: backgroundGradient 8s linear infinite;
 }
-
 @keyframes backgroundGradient {
     0% {
         background-position: 0% 0%;
@@ -28,83 +26,101 @@ body {
         background-position: 200% 200%;
     }
 }
-
-/* ################## FRAMES AND H1 ################## */
+/* ################## FRAMES AND HEADER ################## */
 .outer-border {
-    box-shadow: 0 0 24px #FFFFFF, 0 0 10px #FFFFFF inset;
+    box-shadow: 0 0 24px #fff, 0 0 10px #fff inset;
+    margin: 80px;
 }
-
 .outer-border,
 .inside-border {
     border-radius: 24px;
 }
-
 .outer-border,
 .inner-border {
     background-color: #660BA3;
     padding: 6px;
 }
-
 .inside-border {
-    display: flex;
-    flex-direction: column;
     background-color: #580094;
     padding: 10px;
 }
-
 .header {
     display: flex;
-    padding: 16px;
-}
-
-.header>h1 {
-    flex: 1;
-    font-size: 26px;
-    color: #FFF600;
-    text-shadow: 2px 4px #00F2F2;
-}
-
-.header>h1:hover {
-    color: #00F2F2;
-    text-shadow: 2px 4px #FFF600;
-}
-
-/* #################### BUTTONS #################### */
-/* ############## PEN MODE INDICATOR ############## */
-#mode {
-    border: 3px solid black;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px;
 }
-
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.info>h1 {
+    font-size: 26px;
+    color: #FFF600;
+    text-shadow: 2px 4px #000;
+}
+.manual {
+    position: relative;
+    font-size: 12px;
+    color: #FFF600;
+    text-shadow: 3px 3px #000;
+    width: 144px;
+}
+.manual:hover {
+    color: #00F2F2;
+    cursor: pointer;
+}
+.manual:before {
+    content: attr(data-hover);
+    visibility: hidden;
+    opacity: 0;
+    width: 200px;
+    padding: 8px;
+    border-radius: 16px;
+    background-color: #000;
+    text-align: center;
+    color: #FFF600;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    top: 2rem;
+}
+.manual:hover:before {
+    opacity: 1;
+    visibility: visible;
+}
+/* ####################### BUTTONS ####################### */
+/* ############### PEN MODE INDICATOR ############### */
+#mode {
+    border: 3px solid #000;
+    padding: 10px;
+}
 .pen-off {
     background-color: #FFF600;
+    box-shadow: 0 0 16px #000 inset;
 }
-
 .pen-on {
-    background-color: #FF007D;
-    box-shadow: 0 0 24px #FFFFFF, 0 0 40px #FFFFFF inset;
+    background-color: #FFF600;
+    box-shadow: 0 0 16px #fff inset;
 }
-
-/* ############### BOTTOM BUTTONS ############### */
+/* ################ BOTTOM BUTTONS ################ */
 .buttons {
     display: flex;
     justify-content: space-between;
-    margin: 10px;
+    margin: 10px; 
 }
-
 button,
 input {
     height: 30px;
     width: 60px;
 }
-
 button {
+    font-family: 'Press Start 2P', sans;
+    font-size: 9px;
     border: 3px outset #FFF600;
     background-color: #FF007D;
     color: #FFF600;
-    font-weight: 700;
 }
-
 button:hover {
     border: 3px outset #00F2F2;
     background-color: #660BA3;
@@ -112,11 +128,9 @@ button:hover {
     cursor: pointer;
     transition: all 0.5s;
 }
-
 input {
     background-color: #FFF600;
 }
-
 /* #################### CANVAS #################### */
 .container {
     display: grid;
@@ -124,5 +138,15 @@ input {
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     height: 600px;
     width: 600px;
-    background-color: #FFFFFF;
+    background-color: #fff;
+}
+/* #################### FOOTER #################### */
+.copyright {
+    margin-bottom: 6px;
+    font-size: 14px;
+    text-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 12px #fff;
+}
+.copyright a {
+    text-decoration: none;
+    color: #000;
 }
