@@ -1,4 +1,4 @@
-let click = true;
+let click = false;
 
 function createGrid(size) {
     const container = document.querySelector('.container');
@@ -23,7 +23,7 @@ function changeSize(inputSize) {
     }
 }
 // ################################ COLORS ################################
-let color = '';
+let color = 'black';
 function defColor() {
     if (click) {
         if (color === 'rgb') {
@@ -37,7 +37,7 @@ function defColor() {
 function pickColor(newColor) {
     color = newColor;
 }
-// ### toggles pen mode if get a click anywhere with exception of buttons ###
+// ### toggles pen mode if get a click anywhere with exception of buttons and input ###
 document.querySelector('body').addEventListener('click', function (e) {
     if (e.target.tagName != 'BUTTON' && e.target.tagName != "INPUT") {
         click = !click;
